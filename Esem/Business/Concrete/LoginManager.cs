@@ -35,8 +35,12 @@ namespace Business.Concrete
 
             //user kontrolleri yapılacak.
 
-            if (accountDal.Get(x => x.Username == account.Username) == null && accountDal.Get(x => x.Mail == account.Mail) == null) accountDal.Add(account);
-            return true;
+            if (accountDal.Get(x => x.Username == account.Username) == null && accountDal.Get(x => x.Mail == account.Mail) == null)
+            {
+                accountDal.Add(account);
+                return true;
+            }
+            else return false;
         }
     }
 }
