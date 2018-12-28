@@ -52,10 +52,12 @@
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IEntityRepository.cs" />
     <Compile Include="Abstract\IProductDal.cs" />
+    <Compile Include="Abstract\IPublishedProductDal.cs" />
     <Compile Include="Concrete\AccountDal.cs" />
     <Compile Include="Concrete\CategoryDal.cs" />
     <Compile Include="Concrete\EntityRepositoryBase.cs" />
     <Compile Include="Concrete\ProductDal.cs" />
+    <Compile Include="Concrete\PublishedProductDal.cs" />
     <Compile Include="Concrete\SqlContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
