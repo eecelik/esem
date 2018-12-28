@@ -20,7 +20,7 @@ namespace UnitTest
             ac1.Mail = "iletisim@eecelik.com";
 
             Account ac2 = new Account();
-            ac2.Username = "eToraman";
+            ac2.Username = "etoraman";
             ac2.Firstname = "Ersoy";
             ac2.Lastname = "Toraman";
             ac2.Password = "123";
@@ -31,7 +31,7 @@ namespace UnitTest
             ac3.Firstname = "Mert";
             ac3.Lastname = "Geren";
             ac3.Password = "123";
-            ac3.Mail = "iletisim@merttg.com";
+            ac3.Mail = "iletisim@mertg.com";
 
             IAccountDal accountDal = IocUtil.Resolve<IAccountDal>();
             IProductDal producttDal = IocUtil.Resolve<IProductDal>();
@@ -40,10 +40,7 @@ namespace UnitTest
             accountDal.Add(ac1);
             accountDal.Add(ac2);
             accountDal.Add(ac3);
-
             
-
-
         }
     }
 }
