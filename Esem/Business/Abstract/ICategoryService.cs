@@ -9,7 +9,7 @@ namespace Business.Abstract
 {
     public interface ICategoryService
     {
-        void Add(Category category);
+        bool Add(Category category);
         Category Get(int categoryId);
         List<Category> GetList();
         void Delete(int categoryId);

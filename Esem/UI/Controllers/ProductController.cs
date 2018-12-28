@@ -1,4 +1,5 @@
-﻿using Business.Abstract;
+﻿using Business;
+using Business.Abstract;
 using Entities;
 using System;
 using System.Collections.Generic;
@@ -15,8 +16,17 @@ namespace UI.Controllers
         {
             IProductService productService = Business.IocUtil.Resolve<IProductService>();
             string userName = Session["kullaniciAdi"].ToString();
-            productService.Add(userName,product);
-            return View("Index");
+
+            product.LongLat = "";
+            product.PublishDate = DateTime.Now;
+
+            IMapService mapService = IocUtil.Resolve<IMapService>();
+            mapService.FillAddress(product);
+
+            bool added = productService.Add(userName,product);
+
+            if (added) return View("About", "Home");
+            else return View();
         }
     }
 }

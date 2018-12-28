@@ -20,10 +20,13 @@ namespace Business.Concrete
             this.accountDal = accountDal;
         }
 
-        public void Add(string username, Product product)
+        public bool Add(string username, Product product)
         {
             Account account = accountDal.Get(x => x.Username == username);
-            //kontrol ettiricez
+
+            if (product.CategoryId == 0 || product.Price == null || string.IsNullOrEmpty(product.Name) || product.Image == null || product.LongLat == null || product.PublishDate == null)
+                return false;
+
             product.AccountId = account.Id;
             productDal.Add(product);
         }

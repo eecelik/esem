@@ -42,7 +42,7 @@ namespace UI.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            if (Session["kullaniciAdi"]==null ) return View();
+            if (Session["kullaniciAdi"] == null ) return View();
             else return View("Index");
         }
 

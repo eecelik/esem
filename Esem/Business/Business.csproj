@@ -37,6 +37,9 @@
     <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Windsor.4.1.1\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -52,9 +55,12 @@
   <ItemGroup>
     <Compile Include="Abstract\ICategoryService.cs" />
     <Compile Include="Abstract\ILoginService.cs" />
+    <Compile Include="Abstract\IMapService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
+    <Compile Include="Abstract\Requests.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
     <Compile Include="Concrete\LoginManager.cs" />
+    <Compile Include="Concrete\MapManager.cs" />
     <Compile Include="Concrete\ProductManager.cs" />
     <Compile Include="IocUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

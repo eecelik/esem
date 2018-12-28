@@ -18,9 +18,12 @@ namespace Business.Concrete
             this.categoryDal = categoryDal;
         }
 
-        public void Add(Category category)
+        public bool Add(Category category)
         {
-            if(!string.IsNullOrEmpty(category.CategoryName)) categoryDal.Add(category);
+            if (string.IsNullOrEmpty(category.CategoryName)) return false;
+
+            categoryDal.Add(category);
+            return true;
         }
 
         public void Delete(int categoryId)
