@@ -17,10 +17,8 @@ namespace API.Controllers
         {
             IProductService productService = IocUtil.Resolve<IProductService>();
 
-            productService.Add(new Product { CategoryId = 5, Address = "asdad", City = "city", District = "dist", Name = "name" });
             return Ok(productService.GetList());
         }
-
 
         // GET api/products?categoryId=
         public IHttpActionResult Get(int categoryId)
@@ -28,14 +26,6 @@ namespace API.Controllers
             IProductService productService = IocUtil.Resolve<IProductService>();
 
             return Ok(productService.GetList().Where(x=> x.CategoryId == categoryId));
-        }
-
-        // GET api/products?accountId=
-        public IHttpActionResult Get(int accountId)
-        {
-            IProductService productService = IocUtil.Resolve<IProductService>();
-
-            return Ok(productService.GetList().Where(x => x.AccountId == accountId));
         }
     }
 }
