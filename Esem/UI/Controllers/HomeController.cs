@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Business.Abstract;
 
 namespace UI.Controllers
 {
@@ -10,12 +11,13 @@ namespace UI.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View("User/Register");
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page..";
+            
+            ViewBag.Message = "Your application description page.";
 
             return View();
         }
@@ -26,5 +28,7 @@ namespace UI.Controllers
 
             return View();
         }
+        
+        
     }
 }
