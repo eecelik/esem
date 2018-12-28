@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Security.Principal;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -39,7 +41,7 @@ namespace UI.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            if (User.Identity.IsAuthenticated) return RedirectToAction("Index");
+            if (HttpContext.User.Identity.IsAuthenticated) return RedirectToAction("Index");
             else return View("Login");
         }
 
@@ -52,7 +54,8 @@ namespace UI.Controllers
 
             if (login)
             {
-                FormsAuthentication.SetAuthCookie(loginUser.Username, false, "/");
+                FormsAuthentication.SetAuthCookie(loginUser.Username, true);
+                
                 return View("Index");
             }
             else return View();
