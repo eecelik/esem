@@ -1,7 +1,11 @@
-﻿using Castle.Windsor;
+﻿using Business.Abstract;
+using Business.Concrete;
+using Castle.MicroKernel.Registration;
+using Castle.Windsor;
+using DataAccess.Abstract;
+using DataAccess.Concrete;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,8 +21,9 @@ namespace Business
         {
             return new WindsorContainer().Register(
 
-                //Component.For<IProductDal>().ImplementedBy<ProductDal>(),
-                //Component.For<IPersonalDal>().ImplementedBy<PersonalDal>(),
+                Component.For<IAccountDal>().ImplementedBy<AccountDal>(),
+                Component.For<ILoginService>().ImplementedBy<LoginManager>()
+
                 //Component.For<IDepartmentDal>().ImplementedBy<DepartmentDal>(),
                 //Component.For<IUserDal>().ImplementedBy<UserDal>(),
                 //Component.For<IWasteProductDal>().ImplementedBy<WasteProductDal>(),
