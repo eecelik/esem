@@ -49,9 +49,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAccountDal.cs" />
+    <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IEntityRepository.cs" />
     <Compile Include="Abstract\IProductDal.cs" />
     <Compile Include="Concrete\AccountDal.cs" />
+    <Compile Include="Concrete\CategoryDal.cs" />
     <Compile Include="Concrete\EntityRepositoryBase.cs" />
     <Compile Include="Concrete\ProductDal.cs" />
     <Compile Include="Concrete\SqlContext.cs" />
