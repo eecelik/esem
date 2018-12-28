@@ -14,9 +14,8 @@ namespace UI.Controllers
         public ActionResult Index(Product product)
         {
             IProductService productService = Business.IocUtil.Resolve<IProductService>();
-            string userName = User.Identity.Name;
+            string userName = Session["kullaniciAdi"].ToString();
             productService.Add(userName,product);
-
             return View("Index");
         }
     }
