@@ -14,12 +14,11 @@ namespace Entities
         public string Name { get; set; }
         public string Price { get; set; }
         public byte[] Image { get; set; }
-        public string Description { get; set; }7
+        public string Description { get; set; }
         public string LongLat { get; set; }
         public int AccountId { get; set; }
         public string City { get; set; }
-        public string District { get; set; }
-        public string Address { get; set; }
+        public string FormattedAddress { get; set; }
         public DateTime? PublishDate { get; set; }
     }
 }
