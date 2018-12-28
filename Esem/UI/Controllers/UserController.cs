@@ -62,10 +62,10 @@ namespace UI.Controllers
             else return View();
         }
 
-        [HttpPost]
+        [HttpGet]
         public ActionResult Logout()
         {
-            FormsAuthentication.SignOut();
+            Session["kullaniciAdi"] = null;
             return RedirectToAction("Index");
         }
     }
