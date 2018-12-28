@@ -12,15 +12,19 @@ namespace Business.Concrete
     public class ProductManager : IProductService
     {
         private IProductDal productDal;
+        private IAccountDal accountDal;
 
-        public ProductManager(IProductDal productDal)
+        public ProductManager(IProductDal productDal, IAccountDal accountDal)
         {
             this.productDal = productDal;
+            this.accountDal = accountDal;
         }
 
-        public void Add(Product product)
+        public void Add(string username, Product product)
         {
+            Account account = accountDal.Get(x => x.Username == username);
             //kontrol ettiricez
+            product.AccountId = account.Id;
             productDal.Add(product);
         }
 

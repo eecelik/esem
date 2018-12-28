@@ -284,6 +284,8 @@
     <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\Login\loginPage.cshtml" />
     <Content Include="Views\Register\registerPage.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
