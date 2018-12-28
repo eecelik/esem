@@ -1,6 +1,7 @@
 ﻿using System;
 using Business;
 using DataAccess.Abstract;
+using DataAccess.Concrete;
 using Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -33,6 +34,16 @@ namespace UnitTest
             ac3.Password = "123";
             ac3.Mail = "iletisim@mertg.com";
 
+            Product pr1 = new Product();
+            if (pr1.AccountId == ac1.Id)
+            {
+                pr1.Name = "Iphone6";
+                pr1.City = "manisa";
+                pr1.Description = "Sıfır sayılır.";
+                
+            }
+            
+
             IAccountDal accountDal = IocUtil.Resolve<IAccountDal>();
             IProductDal producttDal = IocUtil.Resolve<IProductDal>();
             ICategoryDal categoryDal = IocUtil.Resolve<ICategoryDal>();
@@ -40,6 +51,12 @@ namespace UnitTest
             accountDal.Add(ac1);
             accountDal.Add(ac2);
             accountDal.Add(ac3);
+
+            
+            producttDal.GetList(x => x.Id == ac1.Id);
+
+
+            
             
         }
     }
