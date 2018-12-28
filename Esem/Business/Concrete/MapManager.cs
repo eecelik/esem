@@ -14,6 +14,8 @@ namespace Business.Concrete
     {
         public void FillAddress(Product product)
         {
+            if (string.IsNullOrEmpty(product.LongLat)) return;
+
             Get("https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyAPqHn3BB_UHwBnIvLef6Zs_oNhn-A9X4s&latlng=" + product.LongLat);
 
             JObject json = JsonConvert.DeserializeObject(source) as JObject;
