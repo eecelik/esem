@@ -22,9 +22,10 @@ namespace Business
             return new WindsorContainer().Register(
 
                 Component.For<IAccountDal>().ImplementedBy<AccountDal>(),
-                Component.For<ILoginService>().ImplementedBy<LoginManager>()
+                Component.For<IProductDal>().ImplementedBy<ProductDal>(),
+                Component.For<ICategoryDal>().ImplementedBy<CategoryDal>(),
+                Component.For<IProductService>().ImplementedBy<ProductManager>()
 
-                //Component.For<IDepartmentDal>().ImplementedBy<DepartmentDal>(),
                 //Component.For<IUserDal>().ImplementedBy<UserDal>(),
                 //Component.For<IWasteProductDal>().ImplementedBy<WasteProductDal>(),
                 //Component.For<IDepartmentService>().ImplementedBy<DepartmentManager>(),

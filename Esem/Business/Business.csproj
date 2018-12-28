@@ -51,7 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ILoginService.cs" />
+    <Compile Include="Abstract\IProductService.cs" />
     <Compile Include="Concrete\LoginManager.cs" />
+    <Compile Include="Concrete\ProductManager.cs" />
     <Compile Include="IocUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
