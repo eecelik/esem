@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Category : IEntity
+    public class PublishedProduct : IEntity
     {
         public int Id { get; private set; }
-        public string CategoryName { get; set; }
+        public int ProductId { get; set; }
+        public int AccountId { get; set; }
     }
 }

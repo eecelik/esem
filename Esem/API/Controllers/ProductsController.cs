@@ -13,11 +13,29 @@ namespace API.Controllers
     public class ProductsController : ApiController
     {
         // GET api/products
-        public IEnumerable<Product> Get()
+        public IHttpActionResult Get()
         {
             IProductService productService = IocUtil.Resolve<IProductService>();
 
-            return productService.GetList();
+            productService.Add(new Product { CategoryId = 5, Address = "asdad", City = "city", District = "dist", Name = "name" });
+            return Ok(productService.GetList());
+        }
+
+
+        // GET api/products?categoryId=
+        public IHttpActionResult Get(int categoryId)
+        {
+            IProductService productService = IocUtil.Resolve<IProductService>();
+
+            return Ok(productService.GetList().Where(x=> x.CategoryId == categoryId));
+        }
+
+        // GET api/products?accountId=
+        public IHttpActionResult Get(int accountId)
+        {
+            IProductService productService = IocUtil.Resolve<IProductService>();
+
+            return Ok(productService.GetList().Where(x => x.AccountId == accountId));
         }
     }
 }
