@@ -32,10 +32,10 @@ namespace Business.Concrete
         {
             if (string.IsNullOrEmpty(account.Firstname.Trim()) || string.IsNullOrEmpty(account.Lastname.Trim()) || string.IsNullOrEmpty(account.Username.Trim()) || string.IsNullOrEmpty(account.Password.Trim()) || string.IsNullOrEmpty(account.Mail.Trim()))
                 return false;
-            
+
             //user kontrolleri yapılacak.
 
-            accountDal.Add(account);
+            if (accountDal.Get(x => x.Username == account.Username) == null && accountDal.Get(x => x.Mail == account.Mail) == null) accountDal.Add(account);
             return true;
         }
     }
