@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
+using Business.Abstract;
+using Entities;
+using System.Security.Cryptography;
 
 namespace UI.Controllers
 {
@@ -21,25 +25,26 @@ namespace UI.Controllers
         }
 
         // GET: User/Create
-        public ActionResult Create()
+        public ActionResult Register()
         {
             return View();
         }
 
         // POST: User/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Register(FormCollection collection)
         {
-            try
-            {
-                // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+
+            ILoginService a = Business.IocUtil.Resolve<ILoginService>();
+            Account nAccount = new Account();
+            nAccount.Firstname = collection["firsName"].ToString();
+            nAccount.Lastname = collection["lastName"].ToString();
+            nAccount.Mail = collection["eMail"].ToString();
+            nAccount.Password = collection["password"].ToString();
+            a.Register(nAccount);
+            return RedirectToAction("Index");
+
         }
 
         // GET: User/Edit/5
