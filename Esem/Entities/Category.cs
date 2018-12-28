@@ -9,7 +9,7 @@ namespace Entities
 {
     public class Category : IEntity
     {
-        public int Id { get; set; }
+        public int Id { get; private set; }
         public string CategoryName { get; set; }
     }
 }
