@@ -57,7 +57,7 @@ namespace UI.Controllers
             if (login)
             {
                 FormsAuthentication.SetAuthCookie(loginUser.Username,false);
-                return View("Register");
+                return View("Index");
             }
             return View();
         }
