@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Business;
+using Business.Abstract;
+using Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,9 +13,11 @@ namespace API.Controllers
     public class ProductsController : ApiController
     {
         // GET api/products
-        public IEnumerable<string> Get()
+        public IEnumerable<Product> Get()
         {
-            return new string[] { "value1", "value2" };
+            IProductService productService = IocUtil.Resolve<IProductService>();
+
+            return productService.GetList();
         }
     }
 }
