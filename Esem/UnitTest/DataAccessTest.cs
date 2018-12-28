@@ -35,13 +35,9 @@ namespace UnitTest
             ac3.Mail = "iletisim@mertg.com";
 
             Product pr1 = new Product();
-            if (pr1.AccountId == ac1.Id)
-            {
-                pr1.Name = "Iphone6";
-                pr1.City = "manisa";
-                pr1.Description = "Sıfır sayılır.";
-                
-            }
+            pr1.Name = "Iphone6";
+            pr1.City = "manisa";
+            pr1.Description = "Sıfır sayılır.";  
             
 
             IAccountDal accountDal = IocUtil.Resolve<IAccountDal>();
@@ -52,7 +48,7 @@ namespace UnitTest
             accountDal.Add(ac2);
             accountDal.Add(ac3);
 
-            
+            producttDal.Add(pr1);
             producttDal.GetList(x => x.Id == ac1.Id);
 
 
