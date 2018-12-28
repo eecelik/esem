@@ -20,8 +20,7 @@ namespace Business.Concrete
 
         public void Add(Category category)
         {
-            //cat kontrolleri yapılacak.
-            categoryDal.Add(category);
+            if(!string.IsNullOrEmpty(category.CategoryName)) categoryDal.Add(category);
         }
 
         public void Delete(int categoryId)
