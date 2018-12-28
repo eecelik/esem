@@ -50,7 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.cs" />
     <Compile Include="Abstract\ILoginService.cs" />
     <Compile Include="Concrete\LoginManager.cs" />
     <Compile Include="IocUtil.cs" />
