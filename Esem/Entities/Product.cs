@@ -19,6 +19,6 @@ namespace Entities
         public string City { get; set; }
         public string District { get; set; }
         public string Address { get; set; }
-        public DateTime PublishDate { get; set; }
+        public DateTime? PublishDate { get; set; }
     }
 }

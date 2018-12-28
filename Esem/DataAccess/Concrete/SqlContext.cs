@@ -6,7 +6,7 @@ namespace DataAccess.Concrete
 {
     public class SqlContext:DbContext
     {
-        public SqlContext() : base() { }
+        public SqlContext() : base("EsemDB") { }
 
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Category> Categories { get; set; }
