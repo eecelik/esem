@@ -11,7 +11,7 @@ namespace UI.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View("User/Register");
         }
 
         public ActionResult About()
@@ -29,11 +29,6 @@ namespace UI.Controllers
             return View();
         }
         
-        public ActionResult Register()
-        {
-            ILoginService a = Business.IocUtil.Resolve<ILoginService>();
-            Account nAccount = new Account();
-            a.Register(nAccount);
-        }
+        
     }
 }
