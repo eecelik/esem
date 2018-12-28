@@ -46,6 +46,9 @@ namespace UI.Controllers
         [HttpGet]
         public ActionResult Login()
         {
+            if (User.Identity.Name!=null)
+                return RedirectToAction("Index","User");
+            ViewBag.loginError = "";
             return View();
         }
         // POST: User/Login
