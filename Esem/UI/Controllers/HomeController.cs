@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Business.Abstract;
 
 namespace UI.Controllers
 {
@@ -15,6 +16,7 @@ namespace UI.Controllers
 
         public ActionResult About()
         {
+            
             ViewBag.Message = "Your application description page.";
 
             return View();
@@ -25,6 +27,13 @@ namespace UI.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        
+        public ActionResult Register()
+        {
+            ILoginService a = Business.IocUtil.Resolve<ILoginService>();
+            Account nAccount = new Account();
+            a.Register(nAccount);
         }
     }
 }
