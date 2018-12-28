@@ -9,5 +9,7 @@ namespace DataAccess.Concrete
         public SqlContext() : base() { }
 
         public DbSet<Account> Accounts { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }
