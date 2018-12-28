@@ -31,7 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,7 +48,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAccountDal.cs" />
+    <Compile Include="Abstract\IEntityRepository.cs" />
+    <Compile Include="Concrete\AccountDal.cs" />
+    <Compile Include="Concrete\EntityRepositoryBase.cs" />
+    <Compile Include="Concrete\SqlContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{157A8B19-E642-4C9F-8EEB-8CB7832E6452}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{32C96D86-69C0-4849-86A2-0F09BAFAF1F2}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
