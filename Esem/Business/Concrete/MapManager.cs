@@ -20,8 +20,11 @@ namespace Business.Concrete
 
             JObject json = JsonConvert.DeserializeObject(source) as JObject;
 
-            product.City = json["results"]["address_components"][4]["long_name"].ToString();
-            product.FormattedAddress = json["results"]["formatted_address"].ToString();
+            product.City = json.First.Next.First[4].First.First.First.First.ToString();
+            product.City = product.City.Split(' ')[1];
+            product.City = product.City.Replace("\"", "");
+            JToken token = json.First.Next.First;
+            product.FormattedAddress = json.First.Next.First.ToString();
         }
     }
 }

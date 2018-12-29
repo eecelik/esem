@@ -29,6 +29,7 @@ namespace Business.Concrete
 
             product.AccountId = account.Id;
             productDal.Add(product);
+            return true;
         }
 
         public void Delete(int productId)
