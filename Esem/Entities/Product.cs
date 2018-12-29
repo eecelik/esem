@@ -13,7 +13,7 @@ namespace Entities
         public int CategoryId { get; set; }
         public string Name { get; set; }
         public string Price { get; set; }
-        public byte[] Image { get; set; }
+        public string ImagePath { get; set; }
         public string Description { get; set; }
         public string LongLat { get; set; }
         public int AccountId { get; set; }
