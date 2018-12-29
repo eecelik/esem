@@ -13,6 +13,19 @@ namespace UI.Controllers
     {
         // GET: Messages
         [HttpGet]
+        public ActionResult Index()
+        {
+            IConversationService conversationService = IocUtil.Resolve<IConversationService>();
+            IAccountService accountService = IocUtil.Resolve<IAccountService>();
+
+            Account fromAccount = accountService.Get(Session["kullaniciAdi"].ToString());
+
+            ViewData["users"] = accountService.GetAccountsWithoutMe(fromAccount.Id);
+
+            return View();
+        }
+
+        [HttpGet]
         public ActionResult Index(string username)
         {
             IConversationService conversationService = IocUtil.Resolve<IConversationService>();
@@ -23,6 +36,7 @@ namespace UI.Controllers
 
             List<Message> messages = conversationService.GetMessages(fromAccount.Id, toAccount.Id);
 
+            ViewData["messages"] = messages;
             return View();
         }
 
