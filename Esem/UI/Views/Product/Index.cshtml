@@ -43,27 +43,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.LongLat)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.LongLat)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.City)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.City)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FormattedAddress)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FormattedAddress)
         </dd>
 
         <dt>
@@ -74,9 +58,18 @@
             @Html.DisplayFor(model => model.PublishDate)
         </dd>
 
+        <dt>
+            @Html.DisplayFor(model => model.FormattedAddress)
+        </dt>
+
+        <dd>
+            <iframe width="600"
+                    height="450"
+                    frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed/v1/streetview?key=AIzaSyAPqHn3BB_UHwBnIvLef6Zs_oNhn-A9X4s&location=" + @Html.DisplayNameFor(model => model.LongLat)
+                    allowfullscreen>
+
+            </iframe>
+        </dd>
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
