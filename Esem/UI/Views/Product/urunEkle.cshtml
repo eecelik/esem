@@ -1,11 +1,10 @@
 ﻿@model Entities.Product
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "urunEkle";
 }
 
-
-<h2>Index</h2>
+<h2>urunEkle</h2>
 
 
 @using (Html.BeginForm()) 
@@ -84,9 +83,8 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
-@section Scripts 
-    {
-<script type="text/javascript">
+@section Scripts {
+    <script type="text/javascript">
       $(document).ready(function () {
           initiate_geolocation();
       });
@@ -102,7 +100,7 @@
       function handle_geolocation_query(position) {
           var lat = position.coords.latitude;
           var lng = position.coords.longitude;
-          document.getElementById("LongLat").value = lat+","+lng;
+          document.getElementById("LongLat").value = lat + "," + lng;
           //$("body").append($("<p></p>")).html("Enlem: " + lat + ", Boylam: " + lng);
       }
 
