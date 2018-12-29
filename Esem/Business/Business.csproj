@@ -58,7 +58,9 @@
     <Compile Include="Abstract\ILoginService.cs" />
     <Compile Include="Abstract\IMapService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
+    <Compile Include="Abstract\IAccountService.cs" />
     <Compile Include="Abstract\Requests.cs" />
+    <Compile Include="Concrete\AccountManager.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
     <Compile Include="Concrete\ConversationManager.cs" />
     <Compile Include="Concrete\LoginManager.cs" />

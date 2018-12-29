@@ -11,29 +11,28 @@ namespace Business.Concrete
 {
     public class ConversationManager : IConversationService
     {
-        private IProductDal productDal;
+        private IConversationDal conversationDal;
+        private IMessageDal messageDal;
 
-        public ConversationManager(IProductDal productDal)
+        public ConversationManager(IConversationDal conversationDal, IMessageDal messageDal)
         {
-            this.productDal = productDal;
+            this.conversationDal = conversationDal;
+            this.messageDal = messageDal;
         }
 
-        public List<string> GetMessages(int fromId, int toId)
+        public List<Message> GetMessages(int fromId, int toId)
         {
-            List<Product> conversations = productDal.GetList().Where(x => x.CategoryId == fromId && x.AccountId == toId).ToList();
+            Conversation conversation = conversationDal.Get(x => x.FromUserId == fromId && x.ToUserId == toId);
 
-            List<string> messages = new List<string>();
-            foreach (Product conversation in conversations)
-            {
-                messages.Add(conversation.Description);
-            }
-
-            return messages;
+            return messageDal.GetList(x => x.ConversationId == conversation.Id);
         }
 
-        public void SendMessage(string fromId, string toId, string message)
+        public void SendMessage(int fromId, int toId, string text)
         {
-            throw new NotImplementedException();
+            Conversation conversation = conversationDal.Get(x => x.FromUserId == fromId && x.ToUserId == toId);
+
+            Message message = new Message() { ConversationId = conversation.Id, SentDate = DateTime.Now };
+            messageDal.Add(message);
         }
     }
 }

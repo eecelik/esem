@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-    public interface IConversationService
+    public interface IAccountService
     {
-        void SendMessage(int fromId, int toId, string text);
-        List<Message> GetMessages(int fromId, int toId);
+        Account Get(string username);
     }
 }
