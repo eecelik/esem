@@ -20,7 +20,7 @@ namespace Business.Concrete
 
             JObject json = JsonConvert.DeserializeObject(source) as JObject;
 
-            product.City = json.First.Next.First[4].First.First.First.First.ToString();
+            product.City = json.First.Next.First.Last.Previous.First.First.First.First.ToString();
             product.City = product.City.Split(' ')[1];
             product.City = product.City.Replace("\"", "");
             string token = json.First.Next.ToString();

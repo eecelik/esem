@@ -33,6 +33,7 @@ namespace UI.Controllers
             IProductService productService = Business.IocUtil.Resolve<IProductService>();
             string userName = Session["kullaniciAdi"].ToString();
             product.PublishDate = DateTime.Now;
+            product.ImagePath= Path.Combine(Server.MapPath("~/img/resim.jpg"));
             IMapService mapService = IocUtil.Resolve<IMapService>();
             mapService.FillAddress(product);
             bool added = productService.Add(userName, product);
