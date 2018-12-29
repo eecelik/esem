@@ -17,7 +17,12 @@ namespace UI.Controllers
         public ActionResult urunEkle()
         {
             if (Session["kullaniciAdi"] == null) return View("Login","User");
-            else return View();
+            else
+            {
+                ICategoryService serviceCategori = IocUtil.Resolve<ICategoryService>();
+                ViewData["Categories"]=serviceCategori.GetList();
+                return View();
+            }
         }
 
         [HttpPost]
@@ -33,6 +38,7 @@ namespace UI.Controllers
             IProductService productService = Business.IocUtil.Resolve<IProductService>();
             string userName = Session["kullaniciAdi"].ToString();
             product.PublishDate = DateTime.Now;
+          
             product.ImagePath= Path.Combine(Server.MapPath("~/img"), file.FileName);
             IMapService mapService = IocUtil.Resolve<IMapService>();
             mapService.FillAddress(product);
