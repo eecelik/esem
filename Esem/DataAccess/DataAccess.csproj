@@ -50,12 +50,16 @@
   <ItemGroup>
     <Compile Include="Abstract\IAccountDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
+    <Compile Include="Abstract\IConversationDal.cs" />
     <Compile Include="Abstract\IEntityRepository.cs" />
+    <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IProductDal.cs" />
     <Compile Include="Abstract\IPublishedProductDal.cs" />
     <Compile Include="Concrete\AccountDal.cs" />
     <Compile Include="Concrete\CategoryDal.cs" />
+    <Compile Include="Concrete\ConversationDal.cs" />
     <Compile Include="Concrete\EntityRepositoryBase.cs" />
+    <Compile Include="Concrete\MessageDal.cs" />
     <Compile Include="Concrete\ProductDal.cs" />
     <Compile Include="Concrete\PublishedProductDal.cs" />
     <Compile Include="Concrete\SqlContext.cs" />
