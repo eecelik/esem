@@ -3,6 +3,7 @@ using Business.Abstract;
 using Entities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -20,8 +21,15 @@ namespace UI.Controllers
         }
 
         [HttpPost]
-        public ActionResult urunEkle(Product product)
+        public ActionResult urunEkle(Product product, HttpPostedFileBase file)
         {
+            if (file != null && file.ContentLength > 0)
+            {
+                var path = Path.Combine(Server.MapPath("~/img"), file.FileName);
+                file.SaveAs(path);
+                TempData["result"] = "Güncelleme Başarılı.";
+            }
+
             IProductService productService = Business.IocUtil.Resolve<IProductService>();
             string userName = Session["kullaniciAdi"].ToString();
             product.PublishDate = DateTime.Now;
