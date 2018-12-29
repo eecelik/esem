@@ -199,6 +199,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\resim.jpg" />
     <Content Include="Login\css\main.css" />
     <Content Include="Login\css\util.css" />
     <Content Include="Login\fonts\font-awesome-4.7.0\css\font-awesome.css" />
@@ -352,7 +353,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="img\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
