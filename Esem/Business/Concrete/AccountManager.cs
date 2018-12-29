@@ -23,5 +23,10 @@ namespace Business.Concrete
             if (string.IsNullOrEmpty(username)) return null;
             return accountDal.Get(x => x.Username == username);
         }
+
+        public List<Account> GetAccountsWithoutMe(int accountId)
+        {
+            return accountDal.GetList(x => x.Id != accountId);
+        }
     }
 }

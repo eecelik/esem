@@ -59,6 +59,7 @@
     <Compile Include="Abstract\IMapService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
     <Compile Include="Abstract\IAccountService.cs" />
+    <Compile Include="Abstract\ISavedProductService.cs" />
     <Compile Include="Abstract\Requests.cs" />
     <Compile Include="Concrete\AccountManager.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Concrete\LoginManager.cs" />
     <Compile Include="Concrete\MapManager.cs" />
     <Compile Include="Concrete\ProductManager.cs" />
+    <Compile Include="Concrete\SavedProductManager.cs" />
     <Compile Include="IocUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

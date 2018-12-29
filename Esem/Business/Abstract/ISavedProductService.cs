@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-    public interface IAccountService
+    public interface ISavedProductService
     {
-        Account Get(string username);
-        List<Account> GetAccountsWithoutMe(int accountId);
+        void Save(int accountId, int productId);
+        List<SaveProduct> GetList();
     }
 }
