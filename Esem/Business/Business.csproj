@@ -54,11 +54,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICategoryService.cs" />
+    <Compile Include="Abstract\IConversationService.cs" />
     <Compile Include="Abstract\ILoginService.cs" />
     <Compile Include="Abstract\IMapService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
     <Compile Include="Abstract\Requests.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
+    <Compile Include="Concrete\ConversationManager.cs" />
     <Compile Include="Concrete\LoginManager.cs" />
     <Compile Include="Concrete\MapManager.cs" />
     <Compile Include="Concrete\ProductManager.cs" />

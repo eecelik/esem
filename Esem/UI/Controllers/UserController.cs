@@ -68,5 +68,10 @@ namespace UI.Controllers
             Session["kullaniciAdi"] = null;
             return RedirectToAction("Index");
         }
+
+        public ActionResult Anasayfa()
+        {
+            return View();
+        }
     }
 }
