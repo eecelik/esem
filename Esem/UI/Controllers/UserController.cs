@@ -64,5 +64,10 @@ namespace UI.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Index");
         }
+
+        public ActionResult Anasayfa()
+        {
+            return View();
+        }
     }
 }
