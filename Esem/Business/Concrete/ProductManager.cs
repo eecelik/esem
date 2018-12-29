@@ -26,7 +26,7 @@ namespace Business.Concrete
 
             if (product.CategoryId == 0 || product.Price == null || string.IsNullOrEmpty(product.Name) || product.Image == null || product.LongLat == null || product.PublishDate == null)
                 return false;
-
+            
             product.AccountId = account.Id;
             productDal.Add(product);
             return true;
