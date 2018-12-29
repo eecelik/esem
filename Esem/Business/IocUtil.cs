@@ -30,7 +30,7 @@ namespace Business
                 Component.For<ILoginService>().ImplementedBy<LoginManager>(),
                 Component.For<IMapService>().ImplementedBy<MapManager>(),
                 Component.For<IConversationService>().ImplementedBy<ConversationManager>(),
-                Component.For<IAccountService>().ImplementedBy<AccountManager>(),
+                Component.For<IAccountService>().ImplementedBy<AccountManager>()
 
 
                 //Component.For<IWasteProductDal>().ImplementedBy<WasteProductDal>(),
