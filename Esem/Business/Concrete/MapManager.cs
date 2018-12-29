@@ -23,8 +23,8 @@ namespace Business.Concrete
             product.City = json.First.Next.First[4].First.First.First.First.ToString();
             product.City = product.City.Split(' ')[1];
             product.City = product.City.Replace("\"", "");
-            JToken token = json.First.Next.First;
-            product.FormattedAddress = json.First.Next.First.ToString();
+            string token = json.First.Next.ToString();
+            product.FormattedAddress = token.Remove(0, token.IndexOf("formatted_address") + 21).Split('"')[0];
         }
     }
 }
