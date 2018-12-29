@@ -348,13 +348,13 @@
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\Anasayfa.cshtml" />
     <Content Include="Views\Home\Anasayfa.cshtml" />
+    <Content Include="Views\Product\urunEkle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="img\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
