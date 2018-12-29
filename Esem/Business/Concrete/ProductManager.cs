@@ -24,7 +24,7 @@ namespace Business.Concrete
         {
             Account account = accountDal.Get(x => x.Username == username);
 
-            if (product.CategoryId == 0 || product.Price == null || string.IsNullOrEmpty(product.Name) || product.Image == null || product.LongLat == null || product.PublishDate == null)
+            if (product.CategoryId == 0 || product.Price == null || string.IsNullOrEmpty(product.Name) || string.IsNullOrEmpty(product.ImagePath) || product.LongLat == null || product.PublishDate == null)
                 return false;
             
             product.AccountId = account.Id;
