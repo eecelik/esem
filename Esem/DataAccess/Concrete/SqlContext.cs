@@ -12,5 +12,6 @@ namespace DataAccess.Concrete
         public DbSet<Product> Products { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Conversation> Conversations { get; set; }
+        public DbSet<SaveProduct> SaveProducts { get; set; }
     }
 }
