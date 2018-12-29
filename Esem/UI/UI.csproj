@@ -347,10 +347,11 @@
     <Content Include="Views\Login\loginPage.cshtml" />
     <Content Include="Views\Register\registerPage.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\Anasayfa.cshtml" />
     <Content Include="Views\Home\Anasayfa.cshtml" />
     <Content Include="Views\Product\urunEkle.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

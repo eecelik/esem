@@ -21,6 +21,8 @@ namespace UI.Controllers
             return View();
         }
 
+       
+
         // GET: User/Register
         [HttpGet]
         public ActionResult Register()
@@ -43,7 +45,11 @@ namespace UI.Controllers
         public ActionResult Login()
         {
             if (Session["kullaniciAdi"] == null ) return View();
-            else return View("Index");
+            else
+            {
+                ViewData["ilanlar"] = Business.IocUtil.Resolve<IProductService>().GetList();
+                return View("Index");
+            }
         }
 
         // POST: User/Login
@@ -57,6 +63,7 @@ namespace UI.Controllers
             {
                 FormsAuthentication.SetAuthCookie(loginUser.Username, true);
                 Session["kullaniciAdi"] = loginUser.Username;
+                ViewData["ilanlar"] = Business.IocUtil.Resolve<IProductService>().GetList();
                 return View("Index");
             }
             else return View();
@@ -73,5 +80,7 @@ namespace UI.Controllers
         {
             return View();
         }
+
+
     }
 }

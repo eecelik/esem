@@ -16,7 +16,7 @@ namespace UI.Controllers
         [HttpGet]
         public ActionResult urunEkle()
         {
-            if (Session["kullaniciAdi"] == null) return View("Login","User");
+            if (Session["kullaniciAdi"] == null) return Redirect("/User/Login");
             else
             {
                 ICategoryService serviceCategori = IocUtil.Resolve<ICategoryService>();
@@ -24,7 +24,12 @@ namespace UI.Controllers
                 return View();
             }
         }
-
+        [HttpGet]
+        public ActionResult Index(int id)
+        {
+            Product gIlan = IocUtil.Resolve<IProductService>().Get(id);
+            return View(gIlan);
+        }
         [HttpPost]
         public ActionResult urunEkle(Product product, HttpPostedFileBase file)
         {
@@ -44,7 +49,7 @@ namespace UI.Controllers
             mapService.FillAddress(product);
             bool added = productService.Add(userName, product);
 
-            if (added) return View("About", "Home");
+            if (added) return Redirect("User/Index");
             else return View();
         }
     }

@@ -1,14 +1,22 @@
-﻿@model Entities.Account
+﻿@model  Entities.Product
 
 @{
     ViewBag.Title = "Index";
 }
+@ViewData["ilanlar"]
+@foreach (var item in ViewData["ilanlar"] as IEnumerable<Entities.Product>)
+{
+    <div class="single-products-catagory clearfix">
+        <a href="/Product/Index?id=@item.Id">
+            <img src="@item.ImagePath" alt=""/>
+            <!-- Hover Content -->
+            <div class="hover-content">
+                <div class="line"></div>
+                <h4>@item.Name</h4>
+                <p>@item.PublishDate.ToString()</p>
+            </div>
+        </a>
+    </div>
 
-<h2>Index</h2>
-@Html.ActionLink("Giriş Yap", "Login", "User")
-<br/>
-@Html.ActionLink("Üye Ol", "Register", "User")
-<br/>
-@Html.ActionLink("Çıkış", "Logout", "User")
-<br />
-@Html.ActionLink("İlan Ver", "urunEkle", "Product")
+}
+
