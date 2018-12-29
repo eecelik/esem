@@ -25,9 +25,9 @@ namespace Business
                 Component.For<IProductDal>().ImplementedBy<ProductDal>(),
                 Component.For<ICategoryDal>().ImplementedBy<CategoryDal>(),
                 Component.For<IProductService>().ImplementedBy<ProductManager>(),
-                Component.For<ILoginService>().ImplementedBy<LoginManager>()
+                Component.For<ILoginService>().ImplementedBy<LoginManager>(),
+                Component.For<IMapService>().ImplementedBy<MapManager>()
 
-                //Component.For<IUserDal>().ImplementedBy<UserDal>(),
                 //Component.For<IWasteProductDal>().ImplementedBy<WasteProductDal>(),
                 //Component.For<IDepartmentService>().ImplementedBy<DepartmentManager>(),
                 //Component.For<IPersonalService>().ImplementedBy<PersonalManager>(),
