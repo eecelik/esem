@@ -7,21 +7,16 @@
 <h2>urunEkle</h2>
 
 
-@using (Html.BeginForm("urunEkle", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-    
-
+    <div>
+        <input type="file" name="file" class="button" />
+    </div>
     <div class="form-horizontal">
         <h4>Product</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <input type="file" name="file" id="file" />
-        <div class="form-group">
-            <div class="col-md-10">
-                
-            </div>
-        </div>
         <div class="form-group">
             @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -77,11 +72,7 @@
                 @Html.ValidationMessageFor(model => model.PublishDate, "", new { @class = "text-danger" })
             </div>
         </div>
-        <div class="form-group">
-            <div class="col-md-10">
-                <input type="file" name="file" />
-            </div>
-        </div>
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -95,42 +86,5 @@
 </div>
 
 @section Scripts {
-    <script type="text/javascript">
-      $(document).ready(function () {
-          initiate_geolocation();
-      });
-      function initiate_geolocation() {
-          if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(handle_geolocation_query, handle_errors);
-          }
-          else {
-              $("body p strong").html("Cihazınız konum belirleme özelliği desteklemiyor.<br/>Yönlenlendiriliyorsunuz...");
-              // burada konum belirleme özelliği olmaması durumunda ne yapmak istiyorsanız o işlemi yapınız
-          }
-      }
-      function handle_geolocation_query(position) {
-          var lat = position.coords.latitude;
-          var lng = position.coords.longitude;
-          document.getElementById("LongLat").value = lat + "," + lng;
-          //$("body").append($("<p></p>")).html("Enlem: " + lat + ", Boylam: " + lng);
-      }
-
-      function handle_errors(error) {
-          switch (error.code) {
-              case error.PERMISSION_DENIED:
-                  alert("Konum bilgisi paylaşılmadığı için işlem tamamlanamadı.");
-                  break;
-              case error.POSITION_UNAVAILABLE:
-                  alert("Mevcut konumunuz tespit edilemedi");
-                  break;
-              case error.TIMEOUT:
-                  alert("Konum tespiti sırasında zaman aşımı meydana geldi");
-                  break;
-              default:
-                  alert("Bilinmeyen Hata");
-                  break;
-          }
-      }
-</script>
     @Scripts.Render("~/bundles/jqueryval")
 }
